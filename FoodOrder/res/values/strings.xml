@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sushi - FoodOrder</string>
+    <string name="action_settings">Settings</string>
+    
+	<string name="menu_item1">aoebi - steamed blue prawn</string>
+  	<string name="menu_item2">hamachi - japanese yellowtail</string>
+  	<string name="menu_item3">hotate - hokkaido scallop</string>
+  	<string name="menu_item4">ikura - salmon roe cured with salt</string>
+  	
+  	<string name="menuItem1_title">Aoebi</string>
+  	<string name="menuItem1_description">Steamed Blue Prawn is a japanese delicasy.</string>  	
+  	<string name="menuItem2_title">Hamachi</string>
+  	<string name="menuItem2_description">Japanese YellowTail. They are eaten either cooked or raw, and are a seasonal favourite in the colder months when the meat must have higher fat content.</string>
+  	<string name="menuItem3_title">Hotate</string>
+  	<string name="menuItem3_description">Hokkaido Scallop. Harvested from the cold deep waters of Hokkaido near Japan. These all natural sashimi grade scallops are great for a sushi application, pan sauteed, or broiled. A very hard to find item, sought after by some of the best chefs around.</string>
+  	<string name="menuItem4_title">Ikura</string>
+  	<string name="menuItem4_description">Salmon Roe Cured With Salt.  Ikura is the fully-ripe ovaries of salmon, and ranges from dark orange to reddish-orange in color.</string>
+  	
+  	<string name="menuItem_order">Order</string>
+  	<string name="menuItem_cancel">Cancel</string>
+  	
+  	<string name="reset">Reset</string>
+  	<string name="checkout">Check-Out</string>
+  	
+  	<string name="menuItem_small">Small $20.00</string>
+  	<string name="menuItem_medium">Medium $30.00</string>
+  	<string name="menuItem_large">Large $37.00</string>
+</resources>

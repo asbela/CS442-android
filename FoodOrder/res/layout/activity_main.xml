@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <RadioGroup 
+        android:id="@+id/sushiMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    
+	    <RadioButton
+	        android:id="@+id/menu_item1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/menu_item1"
+	        android:onClick="onSushiMenuItemClicked" />
+	
+	    <RadioButton
+	        android:id="@+id/menu_item2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/menu_item2"
+	        android:onClick="onSushiMenuItemClicked" />
+	
+	    <RadioButton
+	        android:id="@+id/menu_item3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/menu_item3"
+	        android:onClick="onSushiMenuItemClicked" />
+	
+	    <RadioButton
+	        android:id="@+id/menu_item4"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/menu_item4"
+	        android:onClick="onSushiMenuItemClicked" />
+
+    </RadioGroup>
+    
+    <TextView
+        android:id="@+id/menuOrdered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#000000"
+        android:textStyle="bold" />
+    
+    <LinearLayout 
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:orientation="horizontal" >
+	    
+        <Button 
+	    	android:id="@+id/checkout"
+	    	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/checkout"
+        	android:onClick="onCheckout"
+	    />
+        
+    	<Button 
+	    	android:id="@+id/reset"
+	    	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/reset"
+        	android:onClick="onReset"
+	    />    
+    </LinearLayout>
+</LinearLayout>

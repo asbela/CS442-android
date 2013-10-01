@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
+    
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="282dp"
+        android:layout_height="178dp"
+        android:src="@drawable/ikura" />
+    
+    <TextView android:id="@+id/menuItem4_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menuItem4_title"                
+	    android:textColor="#000000"
+        android:textStyle="bold"/>
+	
+	<TextView android:id="@+id/menuItem4_Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menuItem4_description"
+	    android:textColor="#000000"
+        android:textStyle="bold" />
+
+	<RadioGroup 
+        android:id="@+id/menuItem4_sizes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    
+	    <RadioButton
+	        android:id="@+id/menuItem4_small"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/menuItem_small"
+	        android:onClick="onSizeClicked" />
+	
+	    <RadioButton
+	        android:id="@+id/menuItem4_medium"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/menuItem_medium"
+	        android:onClick="onSizeClicked" />
+	
+	    <RadioButton
+	        android:id="@+id/menuItem4_large"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/menuItem_large"
+	        android:onClick="onSizeClicked" />
+
+    </RadioGroup>
+	
+	<LinearLayout 
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:orientation="horizontal" >
+	    
+	<Button 
+	    android:id="@+id/menuItem4_Order"
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menuItem_order"
+        android:onClick="onMenuItemOrder"
+	    />
+	
+	<Button 
+	    android:id="@+id/menuItem4_Cancel"
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menuItem_cancel"
+        android:onClick="onMenuItemCancel"
+	    />
+	</LinearLayout>
+</LinearLayout>
