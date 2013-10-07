@@ -2,15 +2,26 @@ package info.kgomes.foodorder;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.DownloadManager;
+import android.app.DownloadManager.Query;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.database.Cursor;
+import android.text.util.Linkify;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	protected static final String TAG = "Main Activity Download Receiver";
+
 	int selectedMenuItemId;
 	
 	StringBuilder sb = new StringBuilder();
@@ -18,7 +29,38 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);		
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main);		
+		
+		final TextView emailRestaurantTextView = (TextView)findViewById(R.id.emailRestaurant);		
+		Linkify.addLinks(emailRestaurantTextView, Linkify.EMAIL_ADDRESSES);
+		
+		final DownloadManager downloadManager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);	    
+	    IntentFilter filter = new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE);	        
+	    BroadcastReceiver receiver = new BroadcastReceiver() {
+	      @Override
+	      public void onReceive(Context context, Intent intent) {
+	    	  String action = intent.getAction();
+	    	  if (DownloadManager.ACTION_DOWNLOAD_COMPLETE.equals(action)) {
+	    		  long reference = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+	    		  Query myDownloadQuery = new Query();
+		          myDownloadQuery.setFilterById(reference);
+		          Cursor myDownload = downloadManager.query(myDownloadQuery);
+		          if (myDownload.moveToFirst()) {
+		        	  int fileNameIdx = myDownload.getColumnIndex(DownloadManager.COLUMN_LOCAL_FILENAME);
+		        	  int fileUriIdx = myDownload.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI);
+		        	  
+		        	  String fileName = myDownload.getString(fileNameIdx);
+		        	  String fileUri = myDownload.getString(fileUriIdx);
+		        	  
+		        	  // TODO Do something with the file.
+		        	  //Log.d(TAG, fileName + " : " + fileUri);
+		        	  Toast.makeText(MainActivity.this, "Download Completed! " + fileName + " : " + fileUri, Toast.LENGTH_LONG).show();
+			      }
+	    	  }
+	      }
+	    };
+	        
+	    registerReceiver(receiver, filter);
 	}
 
 	@Override
@@ -97,5 +139,10 @@ public class MainActivity extends Activity {
     	menuOrdered.setText("");
     	RadioButton rb = (RadioButton) findViewById(selectedMenuItemId);
     	rb.setChecked(false);
+	}
+	
+	public void visitWebsite(View view) {
+		Intent intent = new Intent(getApplicationContext(), WebViewActivity.class);
+	    startActivity(intent);
 	}
 }

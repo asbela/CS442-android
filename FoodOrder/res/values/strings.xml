@@ -27,4 +27,10 @@
   	<string name="menuItem_small">Small $20.00</string>
   	<string name="menuItem_medium">Medium $30.00</string>
   	<string name="menuItem_large">Large $37.00</string>
+  	<string name="visit_website">Visit Website</string>
+  	<string name="aboutRestaurant">Phone: 7737109538 \nAddress: 2131 Feldott Lane, Naperville, IL 60540 \nVisit Website: http://www.google.com</string>
+  	<string name="emailRestaurant">Email: kgomes@hawk.iit.edu</string>
+  	
+  	<string name="menuItem_download">Download</string>
+  	<string name="my_feed">http://www.aisb.org.uk/convention/aisb08/AISB08.pdf</string>
 </resources>

@@ -73,5 +73,13 @@
         	android:layout_height="wrap_content"
         	android:text="@string/menuItem_cancel"
         	android:onClick="onMenuItemCancel" />
+		
+		<Button 
+	    	android:id="@+id/menuItem1_download"
+	    	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/menuItem_download"
+        	android:onClick="onMenuItemDownload" />
+		
 	</LinearLayout>
 </LinearLayout>

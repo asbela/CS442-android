@@ -49,10 +49,27 @@
         android:layout_height="wrap_content"
         android:text=""
         android:textColor="#000000"
-        android:textStyle="bold" />
+        android:textStyle="bold" />    
+    
+    <TextView
+        android:id="@+id/aboutRestaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aboutRestaurant"
+        android:autoLink="all"
+        android:textColor="#000000"
+        android:textStyle="normal" />
+    
+    <TextView
+        android:id="@+id/emailRestaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emailRestaurant"
+        android:textColor="#000000"
+        android:textStyle="normal" />
     
     <LinearLayout 
-    	android:layout_width="match_parent"
+    	android:layout_width="wrap_content"
     	android:layout_height="match_parent"
     	android:orientation="horizontal" >
 	    
@@ -71,5 +88,12 @@
         	android:text="@string/reset"
         	android:onClick="onReset"
 	    />    
+	    
+    	<Button
+        	android:id="@+id/visit_website"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/visit_website"
+        	android:onClick="visitWebsite" />
     </LinearLayout>
 </LinearLayout>

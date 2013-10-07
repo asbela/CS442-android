@@ -1,18 +1,41 @@
 package info.kgomes.foodorder;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+
+import org.apache.http.protocol.ResponseServer;
+
 import android.app.Activity;
+import android.app.DownloadManager;
+import android.app.DownloadManager.Query;
+import android.app.DownloadManager.Request;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import info.kgomes.helper.*;
 
 public class MenuItemDetailsActivity extends Activity {	
+	private static final String TAG = "download";
 	String selectedMenuItem;
 	String selectedSize;
 	Double price;	
+	private long myDownloadReference;
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -39,6 +62,8 @@ public class MenuItemDetailsActivity extends Activity {
 	    ListView menuDetailsView = (ListView) findViewById(R.id.menuDetailsView);
 	    menuDetailsView.setAdapter(adapter);
 	    */
+	    
+	    
 	}
 
 	public void onMenuItemCancel(View view) {
@@ -54,6 +79,31 @@ public class MenuItemDetailsActivity extends Activity {
 		myIntent.putExtra("price", "$"+price);
 		setResult(RESULT_OK, myIntent);
 		finish();
+	}
+
+	public void onMenuItemDownload(View view) {
+		String myFeed = getString(R.string.my_feed);
+		String message = "";
+		
+		try {
+			String serviceString = Context.DOWNLOAD_SERVICE;
+			DownloadManager dm = (DownloadManager) getSystemService(serviceString);
+			Uri uri = Uri.parse(myFeed);
+			DownloadManager.Request request = new Request(uri);
+			request.setTitle("SushiMenu");
+			request.setDescription("Downloading Sushi Menu");
+			request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "SushiMenu.pdf");
+			 
+			long reference = dm.enqueue(request);
+			myDownloadReference = reference;
+			
+			message = "Initiating download..";
+		} catch(Exception e) {
+			Log.d(TAG, "Other Exception. "+e.getMessage());
+			message = "Other Exception. "+e.getMessage();			
+		}
+		
+		Toast.makeText(MenuItemDetailsActivity.this, message, Toast.LENGTH_SHORT).show();
 	}
 	
 	public void onSizeClicked(View view) {
