@@ -43,35 +43,52 @@
 
     </RadioGroup>
     
-    <TextView
-        android:id="@+id/menuOrdered"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="#000000"
-        android:textStyle="bold" />    
-    
-    <TextView
-        android:id="@+id/aboutRestaurant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/aboutRestaurant"
-        android:autoLink="all"
-        android:textColor="#000000"
-        android:textStyle="normal" />
-    
-    <TextView
-        android:id="@+id/emailRestaurant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/emailRestaurant"
-        android:textColor="#000000"
-        android:textStyle="normal" />
+    <ListView
+        android:id="@+id/items_ordered_listview"
+        android:layout_width="match_parent"
+        android:layout_height="202dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true" />
     
     <LinearLayout 
     	android:layout_width="wrap_content"
-    	android:layout_height="match_parent"
-    	android:orientation="horizontal" >
+    	android:layout_height="wrap_content"
+    	android:orientation="vertical" >
+	    
+	    <TextView
+	        android:id="@+id/menuOrdered"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text=""
+	        android:textColor="#000000"
+	        android:textStyle="bold" />    
+	    
+	    <TextView
+	        android:id="@+id/aboutRestaurant"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/aboutRestaurant"
+	        android:autoLink="all"
+	        android:textColor="#000000"
+	        android:textStyle="normal" />
+	    
+	    <TextView
+	        android:id="@+id/emailRestaurant"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/emailRestaurant"
+	        android:textColor="#000000"
+	        android:textStyle="normal" />
+    
+	    
+	    
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
 	    
         <Button 
 	    	android:id="@+id/checkout"
@@ -95,5 +112,6 @@
         	android:layout_height="wrap_content"
         	android:text="@string/visit_website"
         	android:onClick="visitWebsite" />
-    </LinearLayout>
+    	</LinearLayout>
+    
 </LinearLayout>

@@ -4,10 +4,10 @@
     <string name="app_name">Sushi - FoodOrder</string>
     <string name="action_settings">Settings</string>
     
-	<string name="menu_item1">aoebi - steamed blue prawn</string>
-  	<string name="menu_item2">hamachi - japanese yellowtail</string>
-  	<string name="menu_item3">hotate - hokkaido scallop</string>
-  	<string name="menu_item4">ikura - salmon roe cured with salt</string>
+	<string name="menu_item1">Aoebi</string>
+  	<string name="menu_item2">Hamachi</string>
+  	<string name="menu_item3">Hotate</string>
+  	<string name="menu_item4">Ikura</string>
   	
   	<string name="menuItem1_title">Aoebi</string>
   	<string name="menuItem1_description">Steamed Blue Prawn is a japanese delicasy.</string>  	
@@ -27,10 +27,12 @@
   	<string name="menuItem_small">Small $20.00</string>
   	<string name="menuItem_medium">Medium $30.00</string>
   	<string name="menuItem_large">Large $37.00</string>
-  	<string name="visit_website">Visit Website</string>
+  	<string name="visit_website">Website</string>
   	<string name="aboutRestaurant">Phone: 7737109538 \nAddress: 2131 Feldott Lane, Naperville, IL 60540 \nVisit Website: http://www.google.com</string>
   	<string name="emailRestaurant">Email: kgomes@hawk.iit.edu</string>
   	
   	<string name="menuItem_download">Download</string>
   	<string name="my_feed">http://www.aisb.org.uk/convention/aisb08/AISB08.pdf</string>
+  	
+  	<string name="no_items_ordered">No Items Ordered!</string>
 </resources>

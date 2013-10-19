@@ -32,9 +32,9 @@ import info.kgomes.helper.*;
 
 public class MenuItemDetailsActivity extends Activity {	
 	private static final String TAG = "download";
-	String selectedMenuItem;
-	String selectedSize;
-	Double price;	
+	String selectedMenuItem = null;
+	String selectedSize = null;
+	Double price = null;	
 	private long myDownloadReference;
 	
 	/** Called when the activity is first created. */
@@ -73,12 +73,17 @@ public class MenuItemDetailsActivity extends Activity {
 	}
 	
 	public void onMenuItemOrder(View view) {
-		Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);	
-		myIntent.putExtra("selectedMenuItem", selectedMenuItem);
-		myIntent.putExtra("size", selectedSize+"");
-		myIntent.putExtra("price", "$"+price);
-		setResult(RESULT_OK, myIntent);
-		finish();
+		if(selectedMenuItem != null) {
+			Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);	
+			myIntent.putExtra("selectedMenuItem", selectedMenuItem);
+			myIntent.putExtra("size", selectedSize+"");
+			myIntent.putExtra("price", "$"+price);
+			myIntent.putExtra("price_double", ""+price);
+			setResult(RESULT_OK, myIntent);
+			finish();
+		} else {
+			Toast.makeText(MenuItemDetailsActivity.this, "Please select size.", Toast.LENGTH_SHORT);
+		}
 	}
 
 	public void onMenuItemDownload(View view) {

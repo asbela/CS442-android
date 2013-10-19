@@ -1,0 +1,32 @@
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listview_itemordered_row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp" >
+    
+    <TextView android:id="@+id/item_name"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textColor="#000000" />
+    
+    <TextView android:id="@+id/price"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textColor="#000000" />
+    
+    <TextView android:id="@+id/order_time"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textColor="#000000" />
+    
+    <TextView android:id="@+id/contact_name"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textColor="#000000" />
+    
+    <TextView android:id="@+id/contact_number"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textColor="#000000" />
+
+</ListView>
